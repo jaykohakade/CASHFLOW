@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Cashflow - Fintech Credit Card Cashflow Service Website",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "node node_modules/vite/bin/vite.js build",
+  "preview": "vite preview"
+},
   "engines": {
     "node": "24.x"
   },
