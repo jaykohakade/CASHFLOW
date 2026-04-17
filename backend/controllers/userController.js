@@ -95,7 +95,7 @@ export const createUser = async (req, res) => {
       phone:         phone.trim(),
       role,
       branch_id:     branch_id || null,
-      username:      email.toLowerCase().split('@')[0], // auto-generate username
+      username:      email.toLowerCase().trim(), // Set email as username
       password_hash: password_hash,
       status:        'active',
     });
