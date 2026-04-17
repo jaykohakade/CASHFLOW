@@ -1,0 +1,462 @@
+/* =========================================================
+   CASHFLOW ERP — TABLE STYLES
+   ========================================================= */
+
+/* ── Table Container ── */
+.table-container {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-xs);
+  width: 1500px;
+  overflow: hidden;
+}
+
+/* ── Table Toolbar ── */
+.table-toolbar {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--surface);
+}
+
+.table-toolbar-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-1);
+  flex: 1;
+  white-space: nowrap;
+}
+
+.table-toolbar-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-weight: 400;
+  margin-top: 1px;
+}
+
+.table-filters {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+/* ── Search Input ── */
+.table-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.table-search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-3);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.table-search input {
+  padding: 8px 12px 8px 32px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--text-1);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  width: 200px;
+  transition: var(--transition);
+}
+
+.table-search input:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(114, 52, 128, 0.07);
+  width: 240px;
+}
+
+.table-search input::placeholder {
+  color: #bbb;
+}
+
+/* ── Filter Selects ── */
+.filter-select {
+  padding: 8px 30px 8px 11px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-1);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%237a7a9a' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  transition: var(--transition);
+}
+
+.filter-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(114, 52, 128, 0.07);
+}
+
+/* ── Date Range ── */
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.date-filter input[type="date"] {
+  padding: 7px 11px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-1);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.date-filter input[type="date"]:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.date-separator {
+  font-size: 0.72rem;
+  color: var(--text-3);
+}
+
+/* ── Scroll Wrapper ── */
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Table ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+  table-layout: fixed;
+}
+
+/* ── Head ── */
+.data-table thead tr {
+  background: var(--bg);
+  border-bottom: 1.5px solid var(--border);
+}
+
+.data-table th {
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.th-sortable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.2s;
+}
+
+.th-sortable:hover {
+  color: var(--primary);
+}
+
+.th-sort-icon {
+  font-size: 0.65rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.th-sortable:hover .th-sort-icon {
+  opacity: 1;
+}
+
+.th-sortable.sorted {
+  color: var(--primary);
+}
+
+.th-sortable.sorted .th-sort-icon {
+  opacity: 1;
+}
+
+/* ── Body ── */
+.data-table tbody tr {
+  border-bottom: 1px solid var(--border-soft);
+  transition: background 0.15s;
+}
+
+.data-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(219, 212, 255, 0.15);
+}
+
+.data-table td {
+  padding: 13px 16px;
+  font-size: 0.83rem;
+  color: var(--text-1);
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ── Special Columns ── */
+.td-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.td-amount {
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.td-profit {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.td-charges {
+  color: var(--olive);
+  font-weight: 600;
+}
+
+.td-expense {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.td-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.portal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.td-date {
+  color: var(--text-2);
+}
+
+.td-date,
+.td-number,
+.td-amount,
+.td-charges,
+.td-expense,
+.td-profit {
+  white-space: nowrap;
+}
+
+.td-portal,
+.td-branch {
+  min-width: 0;
+}
+
+.td-branch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.td-branch-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: var(--soft-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ── Row actions ── */
+.td-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Checkbox column ── */
+.th-check,
+.td-check {
+  width: 40px;
+  padding-right: 0 !important;
+}
+
+.row-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* ── Footer ── */
+.table-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--bg);
+}
+
+.table-count {
+  font-size: 0.78rem;
+  color: var(--text-3);
+}
+
+.table-count strong {
+  color: var(--text-1);
+}
+
+/* ── Pagination ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(114, 52, 128, 0.06);
+}
+
+.page-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(114, 52, 128, 0.3);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Export Button ── */
+.btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn-export:hover {
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(31, 140, 90, 0.3);
+}
+
+/* ── Summary Row ── */
+.table-summary-row td {
+  background: linear-gradient(90deg, rgba(219, 212, 255, 0.2), transparent);
+  font-weight: 700;
+  border-top: 2px solid var(--border);
+  font-size: 0.84rem;
+}
+
+/* ── No Data ── */
+.table-empty {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.table-empty-icon {
+  font-size: 2.2rem;
+  opacity: 0.35;
+  margin-bottom: 12px;
+}
+
+.table-empty-text {
+  font-size: 0.88rem;
+  color: var(--text-3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-filters {
+    width: 100%;
+  }
+
+  .table-search input {
+    width: 100%;
+  }
+
+  .date-filter {
+    flex-wrap: wrap;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

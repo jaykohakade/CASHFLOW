@@ -1,22 +1,20 @@
-// db.js - MongoDB connection config
-// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import { seedDatabase } from '../utils/seed.js';
 
-/*
+dotenv.config();
+
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`DB Connection Error: ${error.message}`);
+    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/cashflow_erp');
+    console.log(`✅ MongoDB connected: ${conn.connection.host}`);
+    
+    // Seed initial data if needed
+    await seedDatabase();
+  } catch (err) {
+    console.error('❌ MongoDB connection failed:', err.message);
     process.exit(1);
   }
 };
 
-module.exports = connectDB;
-*/
-
-// TODO: Set MONGO_URI in .env and uncomment above
-module.exports = {};
+export default connectDB;

@@ -1,0 +1,362 @@
+/* =========================================================
+   CASHFLOW ERP — FORM STYLES
+   ========================================================= */
+
+/* ── Form Card ── */
+.form-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  width: 1500px;
+  /* max-width: 10px; */
+  margin: auto;
+  align-items: center;
+}
+
+.form-card-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--soft-purple), rgba(114,52,128,0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.form-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.form-card-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-top: 1px;
+}
+
+.form-card-body {
+  padding: 24px;
+}
+
+/* ── Form Layout ── */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.form-row.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.form-row.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group:last-child { margin-bottom: 0; }
+
+.form-label {
+  font-size: 0.79rem;
+  font-weight: 600;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+}
+
+.form-label .required {
+  color: var(--red);
+  margin-left: 2px;
+}
+
+/* ── Input Wrapper ── */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+
+.input-prefix,
+.input-suffix {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  font-size: 0.85rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-prefix { left: 12px; }
+.input-suffix { right: 12px; }
+
+/* ── Form Controls ── */
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.87rem;
+  color: var(--text-1);
+  transition: var(--transition);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(114,52,128,0.08);
+}
+
+.form-control::placeholder { color: #bbb; }
+
+.form-control.has-prefix { padding-left: 38px; }
+.form-control.has-suffix { padding-right: 38px; }
+
+.form-control.error {
+  border-color: var(--red);
+  background: var(--red-bg);
+}
+
+.form-control.success {
+  border-color: var(--green);
+}
+
+/* ── Select ── */
+.form-select {
+  width: 100%;
+  padding: 10px 36px 10px 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.87rem;
+  color: var(--text-1);
+  transition: var(--transition);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7a9a' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+  background-color: var(--surface);
+  box-shadow: 0 0 0 3px rgba(114,52,128,0.08);
+}
+
+/* ── Textarea ── */
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.87rem;
+  color: var(--text-1);
+  transition: var(--transition);
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-textarea:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(114,52,128,0.08);
+}
+
+/* ── Error Messages ── */
+.form-error {
+  font-size: 0.72rem;
+  color: var(--red);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-hint {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+/* ── Auto-Calculation Result Panel ── */
+.calc-panel {
+  background: linear-gradient(135deg, var(--cream), rgba(219,212,255,0.35));
+  border: 1.5px solid var(--soft-purple);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-top: 6px;
+}
+
+.calc-panel-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.calc-item {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  text-align: center;
+  border: 1px solid var(--border-soft);
+  transition: var(--transition);
+}
+
+.calc-item:hover { border-color: var(--border); }
+
+.calc-val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.calc-val.green { color: var(--green); }
+.calc-val.red   { color: var(--red); }
+.calc-val.olive { color: var(--olive); }
+
+.calc-key {
+  font-size: 0.66rem;
+  color: var(--text-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.calc-formula {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  margin-top: 3px;
+}
+
+/* ── Form Divider ── */
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-soft);
+}
+
+/* ── Form Actions ── */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ── Toggle / Checkbox ── */
+.toggle-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.toggle-group:last-child { border-bottom: none; }
+
+.toggle-label { font-size: 0.85rem; font-weight: 500; color: var(--text-1); }
+.toggle-sub   { font-size: 0.72rem; color: var(--text-3); margin-top: 1px; }
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.toggle input { opacity: 0; width: 0; height: 0; }
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  border-radius: 22px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle input:checked + .toggle-track { background: var(--primary); }
+
+.toggle-track::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.toggle input:checked + .toggle-track::before { transform: translateX(18px); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .form-row         { grid-template-columns: 1fr; }
+  .form-row.cols-3  { grid-template-columns: 1fr; }
+  .calc-grid        { grid-template-columns: 1fr 1fr; }
+  .form-card-body   { padding: 18px 16px; }
+}
