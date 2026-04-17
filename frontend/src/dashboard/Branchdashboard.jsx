@@ -11,7 +11,7 @@ import DownloadReportButton from './components/DownloadReportButton';
 import '../styles/dashboard.css';
 
 
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 const POLL_MS = 20000; // 20-second refresh
 const BRANCH_DEFAULT_PATH = '/branch';
 const BRANCH_ALLOWED_PATHS = new Set([

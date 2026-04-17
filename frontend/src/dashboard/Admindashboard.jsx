@@ -15,7 +15,7 @@ import '../styles/dashboard.css';
 import '../styles/form.css';
 import '../styles/Portal.css';                       // ← NEW
 
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 const POLL_MS = 30000; // 30-second live refresh
 const ADMIN_DEFAULT_PATH = '/admin';
 const ADMIN_ALLOWED_PATHS = new Set([

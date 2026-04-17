@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../styles/dashboard.css';
 
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const Noticespage = ({ isAdmin }) => {
   const [notices, setNotices] = useState([]);
@@ -147,20 +147,20 @@ const Noticespage = ({ isAdmin }) => {
               <div style={{ marginTop: 16, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
                 {notice.imageUrl && (
                   <div style={{ maxWidth: 200, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                    <img src={`http://localhost:5000${notice.imageUrl}`} alt="Notice attachment" style={{ width: '100%', display: 'block' }} />
+                    <img src={`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}${notice.imageUrl}`} alt="Notice attachment" style={{ width: '100%', display: 'block' }} />
                   </div>
                 )}
                 {notice.audioUrl && (
                   <div style={{ marginTop: 8, width: '100%' }}>
                     <audio controls style={{ height: 35 }}>
-                      <source src={`http://localhost:5000${notice.audioUrl}`} type="audio/mpeg" />
+                      <source src={`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}${notice.audioUrl}`} type="audio/mpeg" />
                       Your browser does not support the audio element.
                     </audio>
                   </div>
                 )}
                 {notice.fileUrl && (
                   <div style={{ marginTop: 8 }}>
-                    <a href={`http://localhost:5000${notice.fileUrl}`} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm" style={{ border: '1px solid var(--border)', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    <a href={`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}${notice.fileUrl}`} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm" style={{ border: '1px solid var(--border)', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                       📄 Download File
                     </a>
                   </div>

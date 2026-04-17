@@ -27,7 +27,7 @@ const fmtINR = (n) => `₹${fmt(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
 const AddTransactionForm = ({
   branchId,
   onSuccess,
-  apiBase = 'http://localhost:5000/api',
+  apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
   portals = [],
 }) => {
   const [form, setForm] = useState(createInitialForm);

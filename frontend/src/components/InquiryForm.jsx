@@ -43,7 +43,7 @@ const InquiryForm = () => {
     setLoading(true);
     setApiError('');
     try {
-      await axios.post('http://localhost:5000/api/enquiries', form);
+      await axios.post((import.meta.env.VITE_API_URL || 'http://localhost:5000/api') + '/enquiries', form);
       setSubmitted(true);
       setForm({ name: '', email: '', mobile: '', message: '' });
     } catch (err) {

@@ -4,7 +4,7 @@ import '../styles/dashboard.css';
 import '../styles/form.css';
 import '../styles/users.css';
 
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 /**
  * Login Page

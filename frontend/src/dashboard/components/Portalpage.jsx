@@ -4,7 +4,7 @@ import PortalTable from '../components/Portaltable';
 import PortalCards from '../components/Portalcards';
 import '../../styles/Portal.css';
 
-const API = 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const PortalPage = () => {
   const [portals, setPortals]           = useState([]);
