@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import { UserModel } from '../models/Users.js';
-import { BranchModel } from '../models/Branch.js';
+import { UserModel } from './models/Users.js';
+import { BranchModel } from './models/Branch.js';
 import bcrypt from 'bcryptjs';
 
 export const seedDatabase = async () => {
@@ -21,7 +21,7 @@ export const seedDatabase = async () => {
     const userCount = await UserModel.countDocuments();
     if (userCount === 0) {
       console.log('Seeding initial users...');
-      
+
       const adminPasswordHash = await bcrypt.hash('admin123', 12);
       await UserModel.create({
         name: 'Super Admin',
@@ -46,7 +46,7 @@ export const seedDatabase = async () => {
           status: 'active'
         });
       }
-      
+
       console.log('Database seeded successfully.');
     }
   } catch (error) {
